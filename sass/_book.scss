@@ -1,7 +1,7 @@
 .📖-root {
     color:black;
     font-size:16px;
-    line-height:1.2em;
+    line-height:1.3em;
 
     .📖-left .📖-running-header,
     .📖-right .📖-running-header {
@@ -11,13 +11,36 @@
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center!important;
     width: 100%;
+
+    & * {
+        padding:0;
+        margin:0;
+    }
     
 }
 
-.book--editorial {
-    font-family: 'burgess'; 
+a:link,
+a:visited {
+    color:black;
+    text-decoration:underline;
 }
 
+.views-field-field-editorial,
+.views-field-field-intro-text-author {
+    font-size:0.75em;
+    line-height:1.2;
+    font-family: 'burgess'; 
+    margin:0 6em;
+}
+
+.views-field-field-intro-text-author {
+    text-align:right;
+}
+
+
+.book__hide {
+    display:none!important;
+}
 
 & h1,
 & h2,
@@ -26,12 +49,34 @@
 & h5 {
     animation: none!important;
     font-variation-settings: 'bloo' 200!important;
+    text-align:center;
+    font-weight:normal;
+    padding:0;
+    margin:1rem 0;
 }
 
+h2 {
+    font-size:36px;
+}
 
-p,
-.editorial--author {
-    margin:16pt 72pt;
+h3.article-author {
+    font-size:27px;
+}
+
+h3,
+h4 {
+    font-size:16px;
+}
+
+p{
+    margin:0 72pt;
+    text-indent:2em;
+}
+.speaker {
+    text-indent:-2em;
+    display:inline-block;
+    color:black;
+    text-decoration:underline;
 }
 
 .caption {

@@ -23,10 +23,15 @@ $(document).on("click","#make-book",function(){
       });
       
 
-      let breakRule = Bindery.PageBreak({
-        selector: 'h2aaaaa',
-        position: 'before',
+      let eachText = Bindery.PageBreak({
+        selector: '.views-row',
+        position: 'after'
       });
+
+      let imageCaptionBreak = Bindery.PageBreak({
+        selector: '.book__no-break',
+        position: 'avoid'
+      })
       
       let spreadRule = Bindery.FullBleedSpread({
         selector: '.big-figure',
@@ -40,11 +45,11 @@ $(document).on("click","#make-book",function(){
         },
           view: Bindery.View.PRINT,
           printSetup: { layout: Bindery.Layout.PAGES },
-          rules: [runningHeaders, breakRule, spreadRule],
+          rules: [runningHeaders, eachText, imageCaptionBreak, spreadRule],
           pageSetup: {
             size: { width: '8.5in', height: '11in' },
             
-            margin: { top: '72pt', inner: '0pt', outer: '0pt', bottom: '36pt' },
+            margin: { top: '72pt', inner: '0pt', outer: '0pt', bottom: '24pt' },
           },
         
         });
