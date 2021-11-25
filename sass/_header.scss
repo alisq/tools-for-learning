@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    // background: #2B2B00;
+    z-index: 7;
+    height: 10rem;
+    background:$green;
+
+   &__tba img{
+    //    text-align:left;
+       max-width: 100%;
+       width: auto;
+       height: auto;
+       max-height: 9.5rem;
+   }
+ 
+   &__publication-title {
+    //    text-align:center;
+   }
+
+   &__menu {
+       text-align:right;
+       list-style-type:none;
+       & li { 
+           display:inline-block;
+           margin-left:2rem;
+        }
+   }
+}
+
+@media (max-width:$mobileMin) {
+    .header {
+        text-align:center;
+        position:static;
+        display:block;
+
+        &__menu {
+            display:none;
+        }
+    }   
+}

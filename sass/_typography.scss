@@ -1,0 +1,340 @@
+// @font-face {
+//     font-family: ''Roboto'';
+//     src: url('/fonts/'Roboto'-Regular.otf') format("opentype");  
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+
+
+// @font-face {
+//     font-family: ''Roboto'';
+//     src: url('fonts/'Roboto'-Semibold.otf') format("opentype");  
+//     font-weight: bold;
+//     font-style: normal;
+
+// }
+// @font-face {
+//     font-family: 'burgess';
+//     src: url('fonts/burgess-regular-pro.otf') format("opentype");  
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'burgess';
+//     src: url('fonts/burgess-italic-pro.otf') format("opentype");  
+//     font-weight: normal;
+//     font-style: italic;
+// }
+
+@font-face {
+    font-family:'Roboto';
+    src: url('fonts/Roboto-Regular_enoki-VF.ttf') format('truetype');
+    font-weight:  400;
+    font-style:   normal;
+    font-stretch: normal;
+}
+
+@font-face {
+  font-family:'burgess';
+  src: url('fonts/burgess-regular-pro.otf') format('otf');
+  font-weight:  400;
+  font-style:   normal;
+}
+
+@font-face {
+  font-family:'burgess';
+  src: url('fonts/burgess-italic-pro.otf') format('otf');
+  font-weight:  400;
+  font-style:   italic;
+}
+
+
+@keyframes breathe {
+    0% {
+      font-variation-settings: 'bloo' 0;
+     
+    }
+    // 60% {
+    //   font-variation-settings: 'bloo' 0;
+      
+    // }
+    
+    80% {
+      font-variation-settings: 'bloo' 200;
+     
+    }  
+  
+    100% {
+      font-variation-settings: 'bloo' 0;
+     
+    }
+  }
+  
+
+.body {
+    font-family: 'Roboto';
+    font-size:2rem;
+    line-height:1.25em
+ 
+}
+a {
+    text-decoration:none;
+    
+}
+a:link,
+a:visited {
+    color:$white;
+}
+
+
+a:hover,
+a:active {
+    color:$yellow;
+}
+
+
+h1, h2, h3, h4, h5, bloom {
+    font-weight:normal;
+    animation: breathe 10000ms infinite both;
+}
+
+h1 {
+  position: relative;
+  line-height:1.1;
+  text-align:left;
+  // top: 2.5rem;
+  cursor:pointer;
+}
+h2 {
+      padding-top:5vh;
+    font-size:3.2rem;
+    line-height:4rem;
+    text-align:center;
+    
+}
+h3 {
+    margin-top:1em;
+    font-size:3rem;
+    font-weight:bold;
+    letter-spacing:0.02;
+    text-align:center;
+    line-height:1.3;
+}
+
+h4 {
+  margin-top:2em;
+  font-size: 1.2em;
+  line-height:1.3em;
+}
+
+h5 {
+  font-size: 40vw;
+  text-align: center;
+  margin: 0;
+  line-height: 1em;
+}
+
+
+
+h2, h3, h4, p {
+  margin-bottom:1.5rem;
+}
+
+.speaker {
+  font-weight: bold;
+  color: $yellow;
+}
+.popout {
+  color:$green;
+}
+
+.popout__interior--right {
+  font-size:1.5rem;
+}
+
+.pull-data {
+  cursor:pointer;
+}
+
+.popout ul {
+  list-style-type:none;
+
+  & li {
+    text-indent:-3em;
+  }
+}
+
+
+.popout a:link,
+.popout a:active, 
+.popout a:visited {
+  color:#000;
+  text-decoration:underline;
+}
+.popout a:hover,
+ {
+  
+  text-decoration:none;
+}
+
+.editorial {
+  
+  font-size:2rem;
+  font-family: 'burgess';
+  
+  &--author {
+    text-align:right;
+  }
+}
+
+.popout__interior--biography,
+.footnotes {
+  
+  font-size:1.7rem;
+  line-height:2rem;
+  font-family: 'burgess';
+  
+}
+
+.footnotes {
+  margin-left:50%;
+}
+
+.see-footnote {
+  vertical-align: super;
+  text-decoration:none;
+  font-size:0.66em;
+  font-weight:bold;
+  
+}
+
+.footnote {
+  font-family: Burgess;
+  border-top: 1px solid #000;
+  padding-top: 1em;
+  margin-top: 1em;
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  hyphens: auto;
+}
+
+.footnote-label {
+  display:inline-block;
+  padding-left:3em;
+}
+
+.lead__image--caption,
+.caption {
+  // font-style:italic;
+  // width:80%;
+  // margin-left:20%;
+  font-family:burgess;
+  line-height:1.2em;
+  text-align:center;
+  font-size:1.5rem;
+  margin-top:0.5em;
+  margin-bottom:1.5rem;
+}
+
+label {
+  font-size:2.5rem;
+}
+input[type="checkbox"] {
+  margin-right:1em;
+}
+
+input[type="checkbox"] + label {
+  transition:all 0.3s;
+}
+
+input[type="checkbox"]:checked + label {
+  font-variation-settings: 'bloo' 200;
+}
+
+button {
+  background:$green;
+  
+  color:$yellow;
+  padding:0.75rem 2rem;
+  font-size:1.5rem;
+  font-weight:bold;
+  border:1px solid $yellow;
+  // border:none;
+  border-radius:30px;
+  font-variation-settings: 'bloo' 200;
+  
+
+
+}
+
+button:hover {
+  color:$green;
+  background:$yellow;
+}
+
+button:active {
+  font-variation-settings: 'bloo' 0;
+}
+
+
+#popout__67 h4 {
+  line-height:1.2;
+  border-top: 1px solid $green;
+  margin-top: 0.75em;
+  padding-top: 0.75em;
+}
+
+.index-label {
+  font-size: 1em;
+  display: inline-block;
+  width: 17rem;
+  vertical-align: top;
+}
+
+.index-label2 {
+  font-size: 1em;
+  display: inline-block;
+  
+    display: inline-block;
+    width: calc(100% - 20rem);
+}
+
+
+.author {
+  // font-family:Burgess;
+  font-size:0.8em;
+} 
+
+.article-list {
+  font-size: 2.75rem!important;
+  line-height: 4rem;
+}
+
+#popout__71 h4 {
+  animation:none;
+}
+
+
+@media (max-width:$mobileMin) { 
+
+
+  h1 {
+    font-size:1.75em;
+  }
+
+  .author {
+    font-size: 0.7em;
+}
+
+.footnotes {
+  margin-left:16%;
+}
+}

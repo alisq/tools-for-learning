@@ -1,0 +1,21 @@
+
+// [block]__[element]--[modifier]
+//BASE
+@import "variables";
+@import "base";
+@import "typography";
+
+
+//LAYOUT
+@import "header";
+@import "footer";
+@import "layout";
+
+@import "book";
+
+
+.body {
+    background:$green;
+    color:$white;
+}
+

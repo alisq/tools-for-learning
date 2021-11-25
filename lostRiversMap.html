@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+            
+            * {
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+
+            html, body {
+                width:100%;
+                height:100%;
+            }
+
+            a:link,
+            a:visited {
+                color:black;
+            }
+
+
+            button {
+                border-radius:0;
+            }
+            h4 {
+                font-size:25px;
+            }
+            p {
+                font-size:15px;
+                line-height:1.25;
+            }
+
+            #map-area {
+                display:grid;
+                grid-template-columns:3fr 2fr;
+            }
+
+
+            #map {
+                width:100%;
+                height:90vh;
+            }
+
+            #map-sidebar {
+                font-family:'roboto';
+                height:90vh;
+                overflow-y:scroll;
+            }
+
+            #map-sidebar::-webkit-scrollbar {
+                display: none;
+                }
+
+                /* Hide scrollbar for IE, Edge and Firefox */
+                #map-sidebar {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+                }
+
+            #map-menu {
+                display:grid;
+                grid-column-gap: 1px;
+                grid-template-columns:repeat(3, 1fr);
+                border-bottom:1px solid #FFF;
+            }
+
+            .map-menu-item {
+                background:#4b4b00;
+                color:white;
+                border:none;
+                font-size:1.5em;
+                
+                padding:0.5rem;
+                cursor:pointer;
+                height:10vh
+            }
+
+            .map-menu-item:hover, 
+            .map-menu-item:active,
+            .map-menu-item.active,
+            .map-menu-item.active:hover {
+                color:#4b4b00;
+                background:white;
+            }
+
+
+            .leaflet-popup-content {
+                color:#4b4b00;
+                font-family:times;
+                font-size:1.4em;
+            }
+
+            .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+                min-width:500px;
+                box-shadow: none;;
+            }
+
+            .info {
+                opacity:0.5; 
+                margin:2em;
+                list-style-type:none;
+                color:#4b4b00;
+                transition:opacity 0.2s;
+                border-top:1px solid #4b4b00;
+
+            }
+
+            #map-sidebar li:first-child {
+                border-top:none;
+            }
+  
+}
+
+           
+
+            .info h4,
+            .info p {
+                margin-bottom:0.5em;
+            }
+
+            .info.active {
+                opacity:1;
+
+            }
+
+
+            @media (max-width:1000px) {
+
+                p  {
+                    font-size:15px;
+                }
+                #map-menu {
+                grid-template-columns:1fr;
+                
+                }
+
+                #map-area {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="map-menu">
+            <button class="map-menu-item active" id="garrisonMap">Garrison Creek</button>
+            <button class="map-menu-item" id="etobicokeMap">Etobicoke Creek</button>
+            <button class="map-menu-item" id="lowerDonMap">Don River</button>
+        </nav>
+        <div id="map-area">
+        <div id="map"></div>
+        <div id="map-sidebar"></div>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+
+        <script type="text/javascript" src="js/garrison-map.json"></script>
+        <script type="text/javascript" src="js/lowerdon-map.json"></script>
+        <script type="text/javascript" src="js/etobicoke-map.json"></script>
+        <script src="js/map.js"></script>
+    </body>
+</html>
