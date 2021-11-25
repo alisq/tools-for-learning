@@ -408,8 +408,7 @@ button:active {
     cursor: pointer;
     z-index: 99; }
     .popout__menu img {
-      width: 5rem;
-      display: none; }
+      width: 5rem; }
     .popout__menu div {
       display: inline-block; }
       .popout__menu div:hover {

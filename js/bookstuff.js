@@ -1,14 +1,21 @@
 
-
+let bookContent = [];
 
 
 
 $(document).on("click","#make-book",function(){
+  bookContent = [];
+  $(".section__book-menu--interior .book-link").each(function(){
+    if ($(this).is(':checked')) {
+      bookContent.push($(this).data("nid"))
+    }
+  })
 
-    //$(".section__book-content").css("display","block")
-    let c =  ".section__book-content.active";
-    //let c = "#book-contents";
+  let bookURL = "https://tba.codepanel.in/book-content/"+bookContent.join("+");
+
+
     
+
 
     let runningHeaders = Bindery.RunningHeader({
         render: (page) =>  {return `<div class="book__head--left">Toronto Biennial of Art</div>  <div class="book__head--center">${page.number}</div> <div class="book__head--right">Programs Publication</div>` }
@@ -27,7 +34,10 @@ $(document).on("click","#make-book",function(){
     
       
       Bindery.makeBook({ 
-          content:c,
+        content: {
+          selector: '.view-book-content',
+          url: bookURL,
+        },
           view: Bindery.View.PRINT,
           printSetup: { layout: Bindery.Layout.PAGES },
           rules: [runningHeaders, breakRule, spreadRule],

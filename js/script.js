@@ -1,7 +1,6 @@
 
 let order= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 shuffleArray(order);
-
 let biblio = {};
 
 url = 'https://tba.codepanel.in/json/biblio/';
@@ -50,7 +49,7 @@ let pages = [];
 
   for (i=0;i<j.length;i++) {
     let item = new Page(j[i]);
-    $(".section__book-menu--interior-top").append(item.displayBookMenu+"<br />")
+    //$(".section__book-menu--interior-top").append(item.displayBookMenu+"<br />")
 
     //CREATE ACTUAL BOOK TEXT (THIS NEEDS WORK)
   $(".section__book-content").append(item.displayBookContent)
@@ -83,11 +82,11 @@ for(i=0;i<p.length;i++) {
     
 
   //CREATE CREATE ITEM FOR BOOK MENU
-  $(".section__book-menu--interior-bottom").append(item.displayBookMenu+"<br />")
+  $(".section__book-menu--interior-middle").append(item.displayBookMenu+"<br />")
 
 
   //CREATE ACTUAL BOOK TEXT (THIS NEEDS WORK)
-  $(".section__book-content").append(item.displayBookContent)
+  //$(".section__book-content").append(item.displayBookContent)
   
 }
 
@@ -104,26 +103,11 @@ $(".section__main--list li")
   .click(function(){
     loadText($(this).data("item"));
   }).each(function(index){
-    $(this)  .css({
+    $(this) .css({
         
       "order":order[index]
     })
   });
-
-
-
-  
-//checking on the checkboxes
-$("input[type=checkbox]").change(function(){
-  
-  AC = "#book-article-"+$(this).data("nid");
-  if ($(this).is(':checked')) {
-    $(AC).addClass("active");
-
-  } else {
-    $(AC).removeClass("active");
-  }
-})
 
 
 
@@ -299,20 +283,23 @@ $(document).on("click",".page-item-make-book",function(){
 });
 
 
-$(".book-link").prop("checked", true);
+//$(".book-link").prop("checked", true);
+$("#book-link-67").prop("checked",false)
 
     $(".section__book-content").addClass("active")
 
-    $("input[type=checkbox]").each(function(){
+    // $("input[type=checkbox]").each(function(){
   
-      AC = "#book-article-"+$(this).data("nid");
-      if ($(this).is(':checked')) {
-        $(AC).addClass("active");
+    //   AC = "#book-article-"+$(this).data("nid");
+
+    //   console.log
+    //   if ($(this).is(':checked')) {
+    //     $(AC).addClass("active");
     
-      } else {
-        $(AC).removeClass("active");
-      }
-    })
+    //   } else {
+    //     $(AC).removeClass("active");
+    //   }
+    // })
 });
 
 
