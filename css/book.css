@@ -1,0 +1,88 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url("fonts/Roboto-Regular_enoki-VF.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal; }
+  
+  @font-face {
+    font-family: 'burgess';
+    src: url("fonts/burgess-regular-pro.otf") format("otf");
+    font-weight: 400;
+    font-style: normal; }
+  
+  @font-face {
+    font-family: 'burgess';
+    src: url("fonts/burgess-italic-pro.otf") format("otf");
+    font-weight: 400;
+    font-style: italic; }  
+    
+
+
+body {
+    font-size:10pt;
+    line-height:1.4;
+    font-family: 'Roboto';
+}
+
+.chapter {
+    margin-top:150pt
+}
+
+h2 {
+    margin-bottom:24pt
+}
+
+
+h3 {
+    margin-top:14pt
+}
+a:link,
+a:visited {
+    color:black;
+}
+
+img {
+    max-height:70%;
+    max-width:100%;
+    height:auto;
+    width:auto;
+    filter:grayscale(1)
+}
+
+.speaker {
+    font-family:'burgess';
+    text-transform:uppercase;
+    text-indent:-3em;
+}
+
+.speaker::after {
+    content:':';
+    text-transform:uppercase;
+}
+
+p {
+    text-indent:3em;
+}
+
+
+.book--editorial {
+    font-family:'burgess'
+}
+
+
+.caption {
+    font-size:0.8em;   
+    margin-bottom:1em;
+}
+#lostRiversMap {
+    display:none;
+}

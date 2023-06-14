@@ -270,6 +270,7 @@ $(document).on("click",".page-item-make-book",function(){
 
 
 
+  $(".section__book-menu input[type=checkbox]").prop( "checked", true ); 
   $(".section__book-menu").fadeIn(200)
 
   // $(document).on("click",".section__book-menu",function(){
@@ -385,8 +386,10 @@ function shuffleArray(array) {
 
   return array;
 }
-
-// setTimeout(function(){
+setTimeout(function(){
+  $(".page-item-make-book").click()
+},500)
+setTimeout(function(){
 //   // $(".page-item-make-book").click()
 //   // $('input[type="checkbox"]').prop('checked', false); // Unchecks it
 //   // $("#book-link-6").prop('checked',true)
@@ -394,9 +397,9 @@ function shuffleArray(array) {
 //   $(".section__book-content").addClass("active");
 //   $(".section__book-content--article").removeClass("active");
 //   $("#book-article-57").addClass("active");
-//   $("#make-book").click()
+   $("#make-book").click()
   
-// },1000);
+},1000);
 
 
 function setCookie(cname, cvalue, exdays) {

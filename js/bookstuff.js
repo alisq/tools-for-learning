@@ -43,7 +43,7 @@ $(document).on("click","#make-book",function(){
           selector: '.view-book-content',
           url: bookURL,
         },
-          view: Bindery.View.PRINT,
+        view: Bindery.View.FLIPBOOK,
           printSetup: { layout: Bindery.Layout.PAGES },
           rules: [runningHeaders, eachText, imageCaptionBreak, spreadRule],
           pageSetup: {
